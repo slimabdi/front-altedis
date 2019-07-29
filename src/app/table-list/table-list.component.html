@@ -1,0 +1,65 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Gestion des Consultants</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                    Date positionnement (P) et Date entretien (E)
+                                  </th>
+                                  <th>
+                                    Commercial
+                                  </th>
+                                  <th>
+                                    Partenaire ou Altedis
+                                  </th>
+                                  <th>
+                                    Nom du client
+                                  </th>
+                                  <th>
+                                    Lieux
+                                  </th>
+                                  <th>
+                                    Secteur d’activité
+                                  </th>
+                                  <th>
+                                    1ere lettre du client
+                                  </th>
+                                  <th>
+                                    info
+                                  </th>
+                                  <th>
+                                    Commentaire
+                                  </th>
+                                  <th>
+                                    Adresse entretien et Contact du client (nom, fonction)
+                                  </th>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let product of products">
+                                        <td>{{ product.createdAt | date: 'dd/MM/yyyy' }}</td>
+                                        <td>{{ product.commercial }}</td>
+                                        <td>{{ product.partenaire }}</td>
+                                        <td>{{ product.client }}</td>
+                                        <td>{{ product.lieux }}</td>
+                                        <td>{{ product.secteur }}</td>
+                                        <td>{{ product.lettre }}</td>
+                                        <td>{{ product.info }}</td>
+                                        <td>{{ product.commentaire }}</td>
+                                        <td>{{ product.Adresse }}</td>
+                                </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

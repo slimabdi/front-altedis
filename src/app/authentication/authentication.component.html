@@ -1,0 +1,24 @@
+<div *ngIf="isLoginError" class="red-text center error-message">
+  <i class="material-icons">error</i> Incorrect username or password
+</div>
+<!-- Default form subscription -->
+<form  #loginForm="ngForm" class="text-center border border-light p-5" (ngSubmit)="OnSubmit(_username.value,_password.value)">
+
+    <p class="h4 mb-4">Login</p>
+
+    <!-- Name -->
+    <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4"  #_username ngModel name="_username" placeholder="Username" required>
+  
+    <!-- Email -->
+    <input type="password" id="defaultSubscriptionFormEmail" class="form-control mb-4" #_password ngModel name="_password" placeholder="Password" required>
+  
+    <!-- Sign in button -->
+    <button [disabled]="!loginForm.valid" mdbBtn color="info" block="true" type="submit">Sign in</button>
+  
+          <!-- Register -->
+          <p>Not a member?
+              <a [routerLink]="['/register']">Register</a>
+            </p>
+  
+  </form>
+  <!-- Default form subscription -->

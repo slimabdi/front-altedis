@@ -1,0 +1,21 @@
+
+  <form  class="text-center border border-light p-5" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+  
+      <p class="h4 mb-4">Register</p>
+  
+      <!-- Name -->
+      <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4"  name="_username" #_username="ngModel" [(ngModel)]="user._username" required>
+      <label data-error="Required field!">UserName</label>
+      <!-- Email -->
+      <input type="password" id="defaultSubscriptionFormEmail" class="form-control mb-4" name="_password" #_password="ngModel" [(ngModel)]="user._password" required  minlength="3">
+      <label [attr.data-error]="_password.errors!=null?(_password.errors.required?'Required field!':'Minimum 3 characters needed'):''">Password</label>
+      <!-- Sign in button -->
+      <button [disabled]="!userRegistrationForm.valid" mdbBtn color="info" block="true" type="submit">Sign Up</button>
+    
+            <!-- Register -->
+            <p>Not a member?
+                <a [routerLink]="['/login']">login</a>
+              </p>
+    
+    </form>
+    <!-- Default form subscription -->
