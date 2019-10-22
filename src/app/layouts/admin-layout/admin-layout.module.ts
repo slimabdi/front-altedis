@@ -40,8 +40,8 @@ import {
     AgmCoreModule.forRoot(),
     MatTooltipModule,
     AgmCoreModule.forRoot({
-      apiKey: '6KC0FNwDk',
-      libraries: ["places"]
+      apiKey: 'AIzaSyCoGBYdRE5bxRON8BaKouHvQIAjVLjZkTk',
+      libraries: ['places']
     })
   ],
   declarations: [
