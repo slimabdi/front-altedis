@@ -40,7 +40,7 @@ import {
     AgmCoreModule.forRoot(),
     MatTooltipModule,
     AgmCoreModule.forRoot({
-      apiKey: '',
+      apiKey: 'AIzaSyBfmfZqPL7myJqkN0zJRrDg5-6KC0FNwDk',
       libraries: ["places"]
     })
   ],

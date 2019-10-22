@@ -11,15 +11,15 @@ import { NgForm } from '@angular/forms';
 })
 export class AuthenticationComponent implements OnInit {
 
-  isLoginError : boolean = false;
-  constructor(private userService : UserService,private router : Router) { }
+  isLoginError = false;
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  OnSubmit(_username,_password){
-     this.userService.userAuthentication(_username,_password).subscribe((data : any)=>{
-      localStorage.setItem('session',data.token);
+  OnSubmit(_username, _password) {
+     this.userService.userAuthentication(_username, _password).subscribe((data: any) => {
+      localStorage.setItem('session', data.token);
       this.router.navigate(['/dashboard']);
     });
   }

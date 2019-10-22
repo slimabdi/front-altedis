@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule,NO_ERRORS_SCHEMA  } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA  } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import {AuthenticationComponent} from './authentication/authentication.component';
 import { AgmCoreModule } from '@agm/core';
-import{UserService} from './shared/user.service';
+import {UserService} from './shared/user.service';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatInputModule } from '@angular/material';
