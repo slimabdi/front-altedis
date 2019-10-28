@@ -27,8 +27,6 @@ export class ConsultantService {
     return this.http.get<any>(`${url}`, {headers: headers})
   }
 
-
-
   registerConsultant(consultant: Consultant) {
     const url = 'http://127.0.0.1:8000/api/new';
     const headers: HttpHeaders = new HttpHeaders({
