@@ -2,10 +2,9 @@ import { Component, OnInit} from '@angular/core';
 import {Appearance} from '@angular-material-extensions/google-maps-autocomplete';
 import PlaceResult = google.maps.places.PlaceResult;
 import { Consultant } from '../consultant';
-import { NgForm } from '@angular/forms';
 import { ConsultantService } from '../consultant.service';
 import { ToastrService } from 'ngx-toastr';
-import { FormBuilder, Validators } from "@angular/forms";
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,16 +13,24 @@ import { FormBuilder, Validators } from "@angular/forms";
 export class DashboardComponent implements OnInit  {
   user: Consultant;
   public appearance = Appearance;
+  registerForm: FormGroup;
   public zoom: number;
   public latitude: number;
   public longitude: number;
   public selectedAddress: PlaceResult;
+// tslint:disable-next-line:indent
+	constructor(private userService: ConsultantService, private toastr: ToastrService, private formBuilder: FormBuilder) {  }
 
-	constructor(private userService: ConsultantService, private toastr: ToastrService) {  }
-
-
-  ngOnInit() { 
-    this.resetForm();
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      createdAt: ['', Validators.required],
+      commercial: ['', Validators.required],
+      lieux: ['', Validators.required],
+      secteur: ['', Validators.required],
+      info: ['', Validators.required],
+      partenaire: [''],
+      client: ['']
+  });
   }
 
   onAutocompleteSelected(result: PlaceResult) {
@@ -36,33 +43,18 @@ export class DashboardComponent implements OnInit  {
     this.user.createdAt = new Date(event);
 }
 
-  resetForm(form?: NgForm) {
-    if (form != null)
-      form.reset();
-    this.user = {
-      commercial: '',
-      partenaire: '',
-      client: '',
-      lieux: '',
-      secteur:'',
-      lettre: '',
-      info: '',
-      commentaire: '',
-      adresse: '',
-      createdAt: null
+  OnSubmit() {
+    if (this.registerForm.invalid) {
+      return;
     }
-  }
 
-  OnSubmit(form: NgForm) {
-    this.userService.registerConsultant(form.value)
+    this.userService.registerConsultant(this.registerForm.value)
       .subscribe((data: any) => {
         if (data) {
-          this.resetForm(form);
           this.toastr.success('Consultant registration successful');
-          form.reset();
-        }
-        else
+        } else {
           this.toastr.error(data.Errors[0]);
+        }
       });
   }
 }

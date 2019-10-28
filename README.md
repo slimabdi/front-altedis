@@ -187,16 +187,9 @@ If you have questions or need help integrating the product please [contact us](h
 
 ##### Social Media
 
-Twitter: <https://twitter.com/CreativeTim>
+Facebook: <https://www.facebook.com/altedis>
 
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://www.instagram.com/CreativeTimOfficial>
+Website: <https://www.altedis.com>
 
 [CHANGELOG]: ./CHANGELOG.md
 
-[version-badge]: https://img.shields.io/badge/version-2.3.0-blue.svg
