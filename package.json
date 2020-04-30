@@ -51,7 +51,7 @@
     "google-maps-ng2": "^1.0.10",
     "googleapis": "40.0.0",
     "hammerjs": "2.0.8",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "kerberos": "^1.1.2",
     "mdbootstrap": "^4.8.7",
     "moment": "2.24.0",
